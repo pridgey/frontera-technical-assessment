@@ -124,7 +124,7 @@ function* loginSaga(action: PayloadAction<LoginPayload>) {
 function* logoutSaga() {
   try {
     localStorage.removeItem("token");
-    yield put(userSlice.actions.resetAllState());
+    yield put(userSlice.actions.setUser(undefined));
   } catch (error) {
     yield put(
       loginSlice.actions.loginError({

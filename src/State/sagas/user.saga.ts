@@ -83,7 +83,7 @@ function* userSaga() {
     // Update user state with success
     yield put(
       userSlice.actions.setUser({
-        ...response.data.userDetails.user,
+        ...response.data.userDetails,
       })
     );
   } catch (error) {
